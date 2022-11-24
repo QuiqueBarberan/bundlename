@@ -1,0 +1,21 @@
+name: 'Bundle name'
+description: 'Returns the name of the release'
+outputs:
+  short_sha:
+    description: "Short sha"
+    value: ${{ steps.random-number-generator.outputs.short_sha }}
+  title:
+    description: "Title"
+    value: ${{ steps.random-number-generator.outputs.title }}
+  bundle:
+    description: "Bundle"
+    value: ${{ steps.random-number-generator.outputs.bundle }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo "short_sha=$(git show -s --format='%h')" >> $GITHUB_OUTPUT
+      shell: bash
+    - run: echo "title=$(git show -s --format='%s')" >> $GITHUB_OUTPUT
+      shell: bash
+    - run: echo "bundle=$( scripts/bundle.sh ) >> $GITHUB_OUTPUT
+      shell: bash
