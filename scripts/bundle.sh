@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "$CI_COMMIT_TITLE $CI_COMMIT_SHORT_SHA" \
+echo "$title $short_sha" \
   | sed "s/['\"]//g" \
   | tr '[:upper:]' '[:lower:]' \
   | sed "s/[ \n\t]/-/g" \
