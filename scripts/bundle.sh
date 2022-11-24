@@ -1,4 +1,6 @@
 #!/bin/sh
+title=$(git show -s --format='%h')
+short_sha=$(git show -s --format='%s')
 echo "$title $short_sha" \
   | sed "s/['\"]//g" \
   | tr '[:upper:]' '[:lower:]' \
