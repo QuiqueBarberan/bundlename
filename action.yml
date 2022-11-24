@@ -3,9 +3,10 @@ description: 'Returns the name of the release'
 outputs:
   bundle:
     description: "Bundle"
-    value: ${{ steps.random-number-generator.outputs.bundle }}
+    value: ${{ steps.bundlestep.outputs.bundle }}
 runs:
   using: "composite"
   steps:
-    - run: echo "bundle=$(./scripts/bundle.sh)" >> $GITHUB_OUTPUT
+    - id: bundlestep
+      run: echo "bundle=$(./scripts/bundle.sh)" >> $GITHUB_OUTPUT
       shell: bash
