@@ -17,5 +17,5 @@ runs:
       shell: bash
     - run: echo "title=$(git show -s --format='%s')" >> $GITHUB_OUTPUT
       shell: bash
-    - run: echo "bundle=$( scripts/bundle.sh ) >> $GITHUB_OUTPUT
+    - run: echo "bundle=$( scripts/bundle.sh )" >> $GITHUB_OUTPUT
       shell: bash
