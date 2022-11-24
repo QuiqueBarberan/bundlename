@@ -16,5 +16,11 @@ runs:
     - run: |
         echo "short_sha=$(git show -s --format='%h')" >> $GITHUB_OUTPUT
         echo "title=$(git show -s --format='%s')" >> $GITHUB_OUTPUT
-        echo "bundle=$(./scripts/bundle.sh)" >> $GITHUB_OUTPUT
+        echo "bundle=$title $short_sha" \
+          | sed "s/['\"]//g" \
+          | tr '[:upper:]' '[:lower:]' \
+          | sed "s/[ \n\t]/-/g" \
+          | sed 's/-$//' \
+          | sed 's/\./-/' \
+          | sed 's/[^a-z0-9_\-]//g'" >> $GITHUB_OUTPUT
       shell: bash
