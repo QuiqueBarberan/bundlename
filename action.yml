@@ -8,5 +8,5 @@ runs:
   using: "composite"
   steps:
     - id: bundlestep
-      run: echo "bundle=$(./scripts/bundle.sh)" >> $GITHUB_OUTPUT
+      run: echo "BUNDLE=$(./scripts/bundle.sh)" >> $GITHUB_OUTPUT
       shell: bash
