@@ -1,9 +1,9 @@
 name: 'Bundle name'
 description: 'Returns the name of the release'
 outputs:
-  bundle:
+  BUNDLE:
     description: "Bundle"
-    value: ${{ steps.bundlestep.outputs.bundle }}
+    value: ${{ steps.bundlestep.outputs.BUNDLE }}
 runs:
   using: "composite"
   steps:
