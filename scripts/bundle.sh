@@ -1,7 +1,7 @@
 #!/bin/sh
-title=$(git show -s --format='%h')
-short_sha=$(git show -s --format='%s')
-echo "$title $short_sha" \
+TITLE=$(git show -s --format='%h')
+SHORT_SHA=$(git show -s --format='%s')
+echo "$TITLE $SHORT_SHA" \
   | sed "s/['\"]//g" \
   | tr '[:upper:]' '[:lower:]' \
   | sed "s/[ \n\t]/-/g" \
