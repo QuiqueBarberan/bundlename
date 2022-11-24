@@ -13,9 +13,8 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "short_sha=$(git show -s --format='%h')" >> $GITHUB_OUTPUT
-      shell: bash
-    - run: echo "title=$(git show -s --format='%s')" >> $GITHUB_OUTPUT
-      shell: bash
-    - run: echo "bundle=$(./scripts/bundle.sh)" >> $GITHUB_OUTPUT
+    - run: |
+        echo "short_sha=$(git show -s --format='%h')" >> $GITHUB_OUTPUT
+        echo "title=$(git show -s --format='%s')" >> $GITHUB_OUTPUT
+        echo "bundle=$(./scripts/bundle.sh)" >> $GITHUB_OUTPUT
       shell: bash
