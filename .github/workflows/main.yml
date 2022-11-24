@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: QuiqueBarberan/bundlename@master
+      - run: echo ${{ steps.foo.outputs.BUNDLE }}
+        shell: bash
