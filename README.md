@@ -7,9 +7,9 @@ Create a YML with a job with this
 
 ```
 jobs:
-  hello_world_job:
+  yourjob:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: JobName
     steps:
       - uses: actions/checkout@v3
       - uses: <user-repo>/<repo-name>@master
@@ -20,3 +20,8 @@ jobs:
   
 It is necessary to assign an id to the action-step.
 After use the action, it is possible to get the output 'BUNDLE' of the action like in the example
+
+In this case, here, this repo, is
+```
+      - uses: QuiqueBarberan/bundlename@master
+```
