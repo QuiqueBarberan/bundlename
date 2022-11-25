@@ -13,5 +13,5 @@ runs:
       shell: bash
     - id: bundlestep
       run: |
-        echo "BUNDLE=$("$TITLE $SHORT_SHA" | sed "s/['\"]//g" | tr '[:upper:]' '[:lower:]' | sed "s/[ \n\t]/-/g" | sed 's/-$//' | sed 's/\./-/' | sed 's/[^a-z0-9_\-]//g')" >> $GITHUB_OUTPUT
+        echo "BUNDLE=$(echo "$TITLE $SHORT_SHA" | sed "s/['\"]//g" | tr '[:upper:]' '[:lower:]' | sed "s/[ \n\t]/-/g" | sed 's/-$//' | sed 's/\./-/' | sed 's/[^a-z0-9_\-]//g')" >> $GITHUB_OUTPUT
       shell: bash
