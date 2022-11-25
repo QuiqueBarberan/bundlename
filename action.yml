@@ -18,3 +18,4 @@ runs:
           | sed 's/-$//' \
           | sed 's/\./-/' \
           | sed 's/[^a-z0-9_\-]//g')" >> $GITHUB_OUTPUT
+  shell: bash
