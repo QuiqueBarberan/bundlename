@@ -8,5 +8,5 @@ runs:
   using: "composite"
   steps:
     - id: bundlestep
-      run: echo "::set-output BUNDLE=$(./scripts/bundle.sh)::true"
+      run: echo "{BUNDLE}={$(./scripts/bundle.sh)}" >> $GITHUB_OUTPUT
       shell: bash
